@@ -3,12 +3,12 @@ from .config import (
     DatabaseSettings,
     RedisSettings,
 )
-from .settings import Settings, get_settings
+from .settings import get_settings, settings
 
 __all__ = [
     "ApplicationSettings",
     "DatabaseSettings",
     "RedisSettings",
-    "Settings",
+    "settings",
     "get_settings",
 ]
