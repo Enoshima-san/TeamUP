@@ -4,7 +4,7 @@ from uuid import UUID, uuid4
 
 
 @dataclass
-class PlayerRaiting:
+class PlayerRating:
     user_id: UUID
     game_id: UUID
     response_id: UUID
