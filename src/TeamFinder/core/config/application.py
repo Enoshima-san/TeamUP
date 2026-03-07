@@ -14,3 +14,6 @@ class ApplicationSettings(BaseSettings):
         env_file_encoding="utf-8",
         extra="ignore",
     )
+
+    def get_debug(self) -> bool:
+        return self.debug

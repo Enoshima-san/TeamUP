@@ -3,6 +3,7 @@ from .config import (
     DatabaseSettings,
     RedisSettings,
 )
+from .logging import logger
 from .settings import get_settings, settings
 
 __all__ = [
@@ -11,4 +12,5 @@ __all__ = [
     "RedisSettings",
     "settings",
     "get_settings",
+    "logger",
 ]
