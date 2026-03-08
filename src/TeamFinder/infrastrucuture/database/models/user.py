@@ -26,7 +26,7 @@ class UserORM(Base):
     blocked_reason = Column(String(255))
 
     user_games = relationship("UserGamesORM", back_populates="user")
-    raitings = relationship("PlayerRatingORM", back_populates="user")
+    ratings = relationship("PlayerRatingORM", back_populates="user")
     responses = relationship("ResponseORM", back_populates="user")
     announcements = relationship("AnnouncementORM", back_populates="user")
     complaints = relationship("ComplaintsORM", back_populates="user")
