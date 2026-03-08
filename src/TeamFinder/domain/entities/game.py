@@ -3,7 +3,7 @@ from typing import List
 from uuid import UUID, uuid4
 
 from .announcement import Announcement
-from .player_raiting import PlayerRating
+from .player_rating import PlayerRating
 from .rank import Rank
 from .user_games import UserGames
 
@@ -14,10 +14,10 @@ class Game:
     icon: bytes
     game_id: UUID = field(default_factory=uuid4)
 
-    game_announcements: List["Announcement"] = field(default_factory=list)
-    game_ranks: List["Rank"] = field(default_factory=list)
-    game_players: List["UserGames"] = field(default_factory=list)
-    game_player_ratings: List["PlayerRating"] = field(default_factory=list)
+    announcements: List["Announcement"] = field(default_factory=list)
+    ranks: List["Rank"] = field(default_factory=list)
+    user_games: List["UserGames"] = field(default_factory=list)
+    player_ratings: List["PlayerRating"] = field(default_factory=list)
 
     def set_game_name(self, game_name: str):
         """Устанавливает название игры"""

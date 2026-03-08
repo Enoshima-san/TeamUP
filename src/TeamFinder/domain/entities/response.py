@@ -16,7 +16,7 @@ class Response:
     created_at: datetime = field(default_factory=datetime.now)
     updated_at: datetime = field(default_factory=datetime.now)
 
-    response_complaints: List["Complaints"] = field(default_factory=list)
+    complaints: List["Complaints"] = field(default_factory=list)
 
     def set_status(self, status: str):
         """

@@ -7,7 +7,7 @@ from uuid import UUID, uuid4
 from ..enums import UserRole
 from .announcement import Announcement
 from .complaints import Complaints
-from .player_raiting import PlayerRating
+from .player_rating import PlayerRating
 from .response import Response
 from .user_games import UserGames
 

@@ -3,6 +3,8 @@ from datetime import datetime
 from typing import List, Optional
 from uuid import UUID, uuid4
 
+from response import Response
+
 from ..enums import AnnouncementStatus
 from .complaints import Complaints
 
@@ -21,7 +23,8 @@ class Announcement:
     created_at: datetime = field(default_factory=datetime.now)
     updated_at: datetime = field(default_factory=datetime.now)
 
-    announcement_complaints: List["Complaints"] = field(default_factory=list)
+    responses: List["Response"] = field(default_factory=list)
+    complaints: List["Complaints"] = field(default_factory=list)
 
     def start(self):
         """Запуск ананонса"""
