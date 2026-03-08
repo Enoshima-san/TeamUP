@@ -26,6 +26,7 @@ class User:
     last_login: datetime = field(default_factory=datetime.now)
     is_active: bool = True
     role: str = UserRole.USER.value
+    has_microphone: bool = False
     is_blocked: bool = False
 
     user_games: List["UserGames"] = field(default_factory=list)
