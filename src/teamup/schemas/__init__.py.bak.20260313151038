@@ -1,8 +1,3 @@
-```python
-"""
-Module for user authentication requests and responses.
-"""
-
 from .auth import (
     LoginRequest,
     RegisterRequest,
@@ -12,4 +7,3 @@ from .auth import (
 )
 
 __all__ = ["UserResponse", "LoginRequest", "RegisterRequest", "TokenPair", "TokenData"]
-```
