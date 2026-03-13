@@ -1,26 +1,11 @@
-```python
 from src.teamup.domain import PlayerRating
+
 from ..models import PlayerRatingORM
 
-class PlayerRatingMapper:
-    """
-    Mapper class for converting between PlayerRating domain objects and PlayerRatingORM database models.
-    """
 
+class PlayerRatingMapper:
     @staticmethod
     def to_domain(orm: PlayerRatingORM | None) -> PlayerRating:
-        """
-        Converts a PlayerRatingORM database model to a PlayerRating domain object.
-
-        Args:
-            orm: The PlayerRatingORM database model to convert.
-
-        Returns:
-            The converted PlayerRating domain object.
-
-        Raises:
-            ValueError: If the orm object is None.
-        """
         if not orm:
             raise ValueError("ORM object is None")
 
@@ -35,18 +20,6 @@ class PlayerRatingMapper:
 
     @staticmethod
     def to_orm(entity: PlayerRating | None) -> PlayerRatingORM:
-        """
-        Converts a PlayerRating domain object to a PlayerRatingORM database model.
-
-        Args:
-            entity: The PlayerRating domain object to convert.
-
-        Returns:
-            The converted PlayerRatingORM database model.
-
-        Raises:
-            ValueError: If the entity object is None.
-        """
         if not entity:
             raise ValueError("Entity is None")
 
@@ -55,7 +28,6 @@ class PlayerRatingMapper:
             user_id=entity.user_id,
             game_id=entity.game_id,
             response_id=entity.response_id,
-            rating_value=entity.rating_value,
+            raiting_value=entity.rating_value,
             created_at=entity.created_at,
         )
-```
