@@ -1,19 +1,55 @@
-from pydantic_settings import BaseSettings, SettingsConfigDict
-
+```python
+from pydantic import BaseSettings, SettingsConfigDict
 
 class ApplicationSettings(BaseSettings):
-    name: str
-    env: str
-    debug: bool
-    host: str
-    port: int
+    """
+    Application settings class.
 
-    model_config = SettingsConfigDict(
-        env_prefix="APP_",
-        env_file=".env",
-        env_file_encoding="utf-8",
-        extra="ignore",
-    )
+    This class represents the application settings, including name, environment,
+    debug mode, host, and port.
+    """
 
-    def get_debug(self) -> bool:
-        return self.debug
+    # Application name
+    app_name: str
+
+    # Environment (e.g., development, production)
+    environment: str
+
+    # Debug mode
+    debug_mode: bool
+
+    # Host IP address
+    host_ip: str
+
+    # Host port
+    port_number: int
+
+    class Config:
+        """
+        Configuration settings for the ApplicationSettings class.
+        """
+
+        # Environment prefix for settings
+        env_prefix = "APP_"
+
+        # Path to the environment file
+        env_file = ".env"
+
+        # Encoding for the environment file
+        env_file_encoding = "utf-8"
+
+        # Extra settings behavior
+        extra = "ignore"
+
+    def is_debug_mode(self) -> bool:
+        """
+        Returns the debug mode setting.
+
+        Args:
+            None
+
+        Returns:
+            bool: The debug mode setting.
+        """
+        return self.debug_mode
+```
