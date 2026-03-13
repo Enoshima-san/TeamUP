@@ -1,8 +1,4 @@
-```python
-# Import necessary interfaces
 from .interfaces import IAuthService
 from .repositories import IUserRepository
 
-# List of all public symbols in this module
 __all__ = ["IUserRepository", "IAuthService"]
-```
