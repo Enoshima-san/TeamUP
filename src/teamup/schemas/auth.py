@@ -26,7 +26,7 @@ class RegisterRequest(BaseModel):
 
 
 class LoginRequest(BaseModel):
-    login: str | EmailStr = Field(..., alias="username")
+    login: str | EmailStr = Field(..., alias="login")
     password: str
 
 
