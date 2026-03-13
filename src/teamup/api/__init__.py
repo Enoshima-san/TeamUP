@@ -1,4 +1,17 @@
-from .di import get_auth_service, get_current_user, get_user_repository
+```python
+"""
+Module for authentication-related functionality.
+
+Provides routers, services, and utilities for handling authentication.
+"""
+
+from .di import (
+    # Importing dependency injection utilities
+    get_auth_service,
+    get_current_user,
+    get_user_repository,
+)
+
 from .routes import auth_router
 
 __all__ = [
@@ -7,3 +20,4 @@ __all__ = [
     "get_current_user",
     "get_user_repository",
 ]
+```
