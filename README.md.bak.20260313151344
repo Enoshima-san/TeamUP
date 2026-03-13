@@ -1,11 +1,11 @@
 ```markdown
-# Регистрация и Вход
+# Восстановление Пароля
 ================
 
 ## Описание
 ------------
 
-Экран регистрации и входа позволяет пользователям создавать учетные записи и авторизоваться на сайте.
+Экран восстановления пароля позволяет пользователям сбросить пароль к их учетной записи.
 
 ## Функциональность
 ------------------
@@ -13,17 +13,12 @@
 ### Входные Данные
 
 *   Адрес электронной почты пользователя
-*   Пароль пользователя
+*   Вопросы и ответы для восстановления пароля
 
-### Регистрация
+### Сброс Пароля
 
-*   Создание новой учетной записи
-*   Вход на сайт с новой учетной записью
-
-### Вход
-
-*   Авторизация пользователя на сайте
-*   Вход на сайт с существующей учетной записью
+*   Отправка пароля на электронную почту пользователя
+*   Вход на сайт с новым паролем
 
 ## Технические Требования
 -------------------------
@@ -47,8 +42,8 @@
 ### Интерфейс
 
 *   Доступ к приложению по адресу `http://localhost:3000` (по умолчанию)
-*   Регистрация на сайте или вход с существующей учетной записью
-*   Вход на сайт с новой учетной записью
+*   Вход на сайт или создание учетной записи
+*   Восстановление пароля по электронной почте пользователя
 
 ### Документация API
 
@@ -70,7 +65,7 @@
 ## Лицензия
 ----------
 
-Регистрация и вход TeamFinder лицензируется под лицензией MIT. См. `LICENSE` для подробной информации.
+Восстановление пароля TeamFinder лицензируется под лицензией MIT. См. `LICENSE` для подробной информации.
 
 ## Благодарности
 ----------------
@@ -87,33 +82,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Регистрация и Вход</title>
+    <title>Восстановление Пароля</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Регистрация и Вход</h1>
+        <h1>Восстановление Пароля</h1>
     </header>
     <main>
         <section>
-            <h2>Регистрация</h2>
-            <form id="register-form">
+            <h2>Входные Данные</h2>
+            <form id="restore-password-form">
                 <label for="email">Адрес электронной почты:</label>
                 <input type="email" id="email" name="email" required>
-                <label for="password">Пароль:</label>
-                <input type="password" id="password" name="password" required>
-                <button type="submit">Зарегистрироваться</button>
+                <label for="question">Вопрос:</label>
+                <input type="text" id="question" name="question" required>
+                <label for="answer">Ответ:</label>
+                <input type="text" id="answer" name="answer" required>
+                <button type="submit">Отправить</button>
             </form>
         </section>
         <section>
-            <h2>Вход</h2>
-            <form id="login-form">
-                <label for="email">Адрес электронной почты:</label>
-                <input type="email" id="email" name="email" required>
-                <label for="password">Пароль:</label>
-                <input type="password" id="password" name="password" required>
-                <button type="submit">Войти</button>
-            </form>
+            <h2>Сброс Пароля</h2>
+            <p>Пароль будет отправлен на электронную почту пользователя.</p>
+            <button id="send-password-button">Отправить Пароль</button>
         </section>
     </main>
     <script src="script.js"></script>
@@ -158,7 +150,7 @@ label {
     margin-bottom: 10px;
 }
 
-input[type="email"], input[type="password"] {
+input[type="email"], input[type="text"] {
     width: 100%;
     height: 40px;
     margin-bottom: 20px;
@@ -166,7 +158,7 @@ input[type="email"], input[type="password"] {
     border: 1px solid #ccc;
 }
 
-button[type="submit"] {
+button[type="submit"], button[type="button"] {
     width: 100%;
     height: 40px;
     background-color: #333;
@@ -175,7 +167,7 @@ button[type="submit"] {
     cursor: pointer;
 }
 
-button[type="submit"]:hover {
+button[type="submit"]:hover, button[type="button"]:hover {
     background-color: #444;
 }
 ```
@@ -183,29 +175,30 @@ button[type="submit"]:hover {
 ```javascript
 // script.js
 document.addEventListener("DOMContentLoaded", function () {
-    const registerForm = document.getElementById("register-form");
-    const loginForm = document.getElementById("login-form");
+    const form = document.getElementById("restore-password-form");
+    const sendPasswordButton = document.getElementById("send-password-button");
 
-    registerForm.addEventListener("submit", function (event) {
+    form.addEventListener("submit", function (event) {
         event.preventDefault();
         const email = document.getElementById("email").value;
-        const password = document.getElementById("password").value;
+        const question = document.getElementById("question").value;
+        const answer = document.getElementById("answer").value;
 
-        // Создание новой учетной записи
+        // Отправка пароля на электронную почту пользователя
         // ...
 
-        console.log("Учетная запись создана.");
+        console.log("Пароль отправлен на электронную почту пользователя.");
     });
 
-    loginForm.addEventListener("submit", function (event) {
-        event.preventDefault();
+    sendPasswordButton.addEventListener("click", function () {
         const email = document.getElementById("email").value;
-        const password = document.getElementById("password").value;
+        const question = document.getElementById("question").value;
+        const answer = document.getElementById("answer").value;
 
-        // Авторизация пользователя на сайте
+        // Отправка пароля на электронную почту пользователя
         // ...
 
-        console.log("Пользователь авторизован.");
+        console.log("Пароль отправлен на электронную почту пользователя.");
     });
 });
 ```

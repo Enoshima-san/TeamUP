@@ -17,15 +17,9 @@ from .routes import auth_router
 # Define a new import for password recovery functionality
 from .password_recovery import password_recovery_router
 
-# Define a new import for registration and login functionality
-from .registration import registration_router
-from .login import login_router
-
 __all__ = [
     "auth_router",
     "password_recovery_router",
-    "registration_router",
-    "login_router",
     "get_auth_service",
     "get_current_user",
     "get_user_repository",
