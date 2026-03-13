@@ -14,12 +14,8 @@ from .di import (
 
 from .routes import auth_router
 
-# Define a new import for password recovery functionality
-from .password_recovery import password_recovery_router
-
 __all__ = [
     "auth_router",
-    "password_recovery_router",
     "get_auth_service",
     "get_current_user",
     "get_user_repository",
