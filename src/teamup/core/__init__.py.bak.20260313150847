@@ -1,8 +1,3 @@
-```python
-"""
-Module for importing and setting up application settings and logging.
-"""
-
 from .config import (
     ApplicationSettings,
     DatabaseSettings,
@@ -11,7 +6,6 @@ from .config import (
 from .logging import logger, setup_logging
 from .settings import get_settings, settings
 
-# Set up logging to ensure it's initialized before any other modules import this one
 setup_logging()
 
 __all__ = [
@@ -22,4 +16,3 @@ __all__ = [
     "get_settings",
     "logger",
 ]
-```
